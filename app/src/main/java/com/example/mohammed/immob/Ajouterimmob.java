@@ -68,12 +68,12 @@ public class Ajouterimmob extends AppCompatActivity implements View.OnClickListe
         Etat=(RatingBar)findViewById(R.id.immobetat);
         Prix=(EditText) findViewById(R.id.immobprix);
         Discription=(EditText)findViewById(R.id.immobdiscription);
-
+        btnup=(Button)findViewById(R.id.immobenregistrer);
 
 
         gridView = (GridView)findViewById(R.id.mygridview);
         btnchos=(Button)findViewById(R.id.immobimagechoix);
-        btnup=(Button)findViewById(R.id.immobenregistrer);
+
 
 
 
