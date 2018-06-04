@@ -18,6 +18,7 @@ public class ProfilFragment extends Fragment {
 
     TextView nomprenom,email;
     Button tomes,tomesfa;
+    Button conecter1;
 
 
     public ProfilFragment() {
@@ -37,8 +38,14 @@ public class ProfilFragment extends Fragment {
 
         nomprenom.setText(HomeActivity.utilisateur.getNom_Utilisateur()+" "+HomeActivity.utilisateur.getPrenom_Utilisateur());
         email.setText(HomeActivity.utilisateur.getEmail_Utilisateur());
-
-
+        conecter1=(Button)view.findViewById(R.id.deconecter);
+        conecter1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myintent = new Intent(getActivity(),LoginActivity.class);
+                getActivity().startActivity(myintent);
+            }
+        });
         tomes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

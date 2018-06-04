@@ -21,6 +21,7 @@ public class MesannonceActivity extends AppCompatActivity {
         setContentView(R.layout.activity_mesannonce);
 ctx=MesannonceActivity.this;
 
+
         listView=(ListView)findViewById(R.id.mesannoncelist);
 
         new BackTask(getApplicationContext()).execute("getmesannonce",String.valueOf(HomeActivity.utilisateur.getID_Utilisateur()));

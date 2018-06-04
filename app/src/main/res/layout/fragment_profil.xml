@@ -80,6 +80,18 @@
                 android:paddingRight="120dp"
                 />
 
+            <Button
+                android:id="@+id/deconecter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                android:text="deconnexion"
+                android:drawableLeft="@drawable/ic_power_settings_new_black_24dp"
+                android:textSize="14dp"
+
+                android:paddingLeft="80dp"
+                android:paddingRight="120dp"
+                />
         </LinearLayout>
 
 

@@ -62,6 +62,9 @@ public class Homefragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_homefragment, container, false);
         listView=(ListView) view.findViewById(R.id.immoblist);
         botton=(Button)view.findViewById(R.id.ajouter);
+
+
+
         botton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
