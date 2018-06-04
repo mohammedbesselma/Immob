@@ -11,11 +11,13 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.RatingBar;
+import android.widget.ShareActionProvider;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -68,6 +70,7 @@ public class Ajouterimmob extends AppCompatActivity implements View.OnClickListe
         Discription=(EditText)findViewById(R.id.immobdiscription);
 
 
+
         gridView = (GridView)findViewById(R.id.mygridview);
         btnchos=(Button)findViewById(R.id.immobimagechoix);
         btnup=(Button)findViewById(R.id.immobenregistrer);
@@ -102,13 +105,34 @@ public class Ajouterimmob extends AppCompatActivity implements View.OnClickListe
 
         }else if(view == btnup){
 
-            BienImmobilier bienImmobilier=new BienImmobilier();
-            bienImmobilier.setType(Type.getSelectedItem().toString());
-            bienImmobilier.setVille(Ville.getSelectedItem().toString());
-            bienImmobilier.setEtat(Etat.getRating());
-            bienImmobilier.setPrix(Float.parseFloat(Prix.getText().toString()));
-            bienImmobilier.setDiscription(Discription.getText().toString());
-            bienImmobilier.AjouterImmobilier(getApplicationContext(),String.valueOf(utilisateur.getID_Utilisateur()),selectionResult);
+            if(Type.getSelectedItem().equals("Type")){
+                Toast.makeText(getApplicationContext(),"type non selectioné",Toast.LENGTH_LONG).show();
+
+            }else if(Ville.getSelectedItem().equals("Ville")){
+                Toast.makeText(getApplicationContext(),"ville non selectioné",Toast.LENGTH_LONG).show();
+
+
+            }else if (Etat.getRating()==0){
+
+                Toast.makeText(getApplicationContext(),"etat non difinier",Toast.LENGTH_LONG).show();
+
+            }else if (TextUtils.isEmpty(Prix.getText())){
+                Prix.setError( "Chaump  est obligatoir!" );
+
+            }else if (TextUtils.isEmpty(Discription.getText())){
+                Discription.setError( "Chaump  est obligatoir!" );
+
+            }else {
+
+                BienImmobilier bienImmobilier=new BienImmobilier();
+                bienImmobilier.setType(Type.getSelectedItem().toString());
+                bienImmobilier.setVille(Ville.getSelectedItem().toString());
+                bienImmobilier.setEtat(Etat.getRating());
+                bienImmobilier.setPrix(Float.parseFloat(Prix.getText().toString()));
+                bienImmobilier.setDiscription(Discription.getText().toString());
+                bienImmobilier.AjouterImmobilier(getApplicationContext(),String.valueOf(utilisateur.getID_Utilisateur()),selectionResult);
+
+            }
 
 
         }
