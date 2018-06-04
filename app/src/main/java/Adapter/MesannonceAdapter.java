@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RatingBar;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -67,7 +68,7 @@ public class MesannonceAdapter extends BaseAdapter {
 
         view = inflater.inflate(R.layout.mesannonce_row, null);
 
-        HashMap<String, String> annonce = mesannoncelist.get(i);
+        final HashMap<String, String> annonce = mesannoncelist.get(i);
         TextView type=(TextView)view.findViewById(R.id.type);
         TextView ville=(TextView)view.findViewById(R.id.ville);
         TextView prix=(TextView)view.findViewById(R.id.prix);
@@ -86,25 +87,28 @@ public class MesannonceAdapter extends BaseAdapter {
             public void onClick(View v) {
 
                 final Dialog dialog = new Dialog(MesannonceActivity.ctx);
-                dialog.setContentView(R.layout.deleteannoncedialog);
+                dialog.setContentView(R.layout.editannoncedialog);
+                final Spinner Type=(Spinner)dialog.findViewById(R.id.immobtype);
+               final Spinner Ville=(Spinner)dialog.findViewById(R.id.immobville);
+               final RatingBar Etat=(RatingBar)dialog.findViewById(R.id.immobetat);
+               final EditText Prix=(EditText) dialog.findViewById(R.id.immobprix);
+               final EditText Discription=(EditText)dialog.findViewById(R.id.immobdiscription);
+               Button btnup=(Button)dialog.findViewById(R.id.immobenregistrer);
 
-                Button cancel = (Button) dialog.findViewById(R.id.cancel);
-                Button ok = (Button) dialog.findViewById(R.id.ok);
-                cancel.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        dialog.dismiss();
-                    }});
+               btnup.setOnClickListener(new View.OnClickListener() {
+                   @Override
+                   public void onClick(View v) {
+                       new BackTask(context).execute("edit",mesannoncelist.get(i).get("idimmob"),
+                               Type.getSelectedItem().toString()
+                               ,Ville.getSelectedItem().toString()
+                               ,String.valueOf(Etat.getRating()),Prix.getText().toString()
+                               ,Discription.getText().toString());
+                       new BackTask(context).execute("getmesannonce",String.valueOf(HomeActivity.utilisateur.getID_Utilisateur()));
+dialog.dismiss();
+                   }
+               });
 
-                ok.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        new BackTask(context).execute("deleteannonce",mesannoncelist.get(i).get("idimmob"));
-                        new BackTask(context).execute("getmesannonce",String.valueOf(HomeActivity.utilisateur.getID_Utilisateur()));
-                        dialog.dismiss();
 
-                    }
-                });
 
 
 
