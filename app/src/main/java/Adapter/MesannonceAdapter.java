@@ -81,40 +81,6 @@ public class MesannonceAdapter extends BaseAdapter {
         prix.setText(annonce.get("prix"));
         discr.setText(annonce.get("discription"));
 
-        edit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                final Dialog dialog = new Dialog(MesannonceActivity.ctx);
-                dialog.setContentView(R.layout.deleteannoncedialog);
-
-                Button cancel = (Button) dialog.findViewById(R.id.cancel);
-                Button ok = (Button) dialog.findViewById(R.id.ok);
-                cancel.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        dialog.dismiss();
-                    }});
-
-                ok.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        new BackTask(context).execute("deleteannonce",mesannoncelist.get(i).get("idimmob"));
-                        new BackTask(context).execute("getmesannonce",String.valueOf(HomeActivity.utilisateur.getID_Utilisateur()));
-                        dialog.dismiss();
-
-                    }
-                });
-
-
-
-                dialog.show();
-
-
-
-
-            }
-        });
 
 
         delete.setOnClickListener(new View.OnClickListener() {
