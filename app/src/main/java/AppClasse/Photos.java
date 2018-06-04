@@ -3,6 +3,8 @@ package AppClasse;
 import android.content.Context;
 import android.widget.Toast;
 
+import com.example.mohammed.immob.HomeActivity;
+
 import net.gotev.uploadservice.MultipartUploadRequest;
 import net.gotev.uploadservice.UploadNotificationConfig;
 
@@ -23,7 +25,7 @@ public class Photos {
 
 
 
-    public void Inserer(ArrayList<String>selectionResult, Context ctx,String id){
+    public void Inserer(ArrayList<String>selectionResult, Context ctx,String id,String idutilisateur){
 
         for (int i = 0;i<selectionResult.size();i++){
 
@@ -34,7 +36,9 @@ public class Photos {
                 //Creating a multi part request
                 new MultipartUploadRequest(ctx, uploadId, UPLOAD_URL)
                         .addFileToUpload(selectionResult.get(i), "image") //Adding file
-                        .addParameter("ID_immob", id) //Adding text parameter to the request
+                        .addParameter("ID_immob", id)
+                        .addParameter("idutilisateur", idutilisateur)
+                        .addParameter("i", String.valueOf(i))//Adding text parameter to the request
                         .setNotificationConfig(new UploadNotificationConfig())
                         .setMaxRetries(2)
                         .startUpload(); //Starting the upload

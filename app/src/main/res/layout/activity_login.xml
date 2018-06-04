@@ -85,18 +85,10 @@
                 android:layout_margin="5dp"
                 android:background="@drawable/bouton1"
                 android:onClick="toregitre"
-                android:text="Register"
+                android:text="inscrir"
                 android:textColor="#fff"
                 android:textSize="12dp" />
-            <Button
-                android:id="@+id/about"
-                android:layout_margin="5dp"
-                android:layout_width="100dp"
-                android:layout_height="40dp"
-                android:text="About"
-                android:textColor="#fff"
-                android:background="@drawable/bouton2"
-                />
+
 
 
         </LinearLayout>
@@ -153,7 +145,7 @@
             android:drawableRight="@drawable/log_24dp"
             android:onClick="log"
             android:padding="10dp"
-            android:text="LOGIN"
+            android:text="connecter"
             android:textColor="#fff" />
         <ProgressBar
             android:id="@+id/prog"

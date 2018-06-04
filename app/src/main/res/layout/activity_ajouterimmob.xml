@@ -10,27 +10,7 @@
 
     >
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="@color/gris"
-        android:paddingTop="10dp"
-        android:paddingLeft="20dp"
-        >
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:textSize="27dp"
-            android:textStyle="bold"
-            android:textColor="@color/pink2"
-            android:text="Accueil"
-            android:drawableLeft="@drawable/ic_arrow_back_black_24dp"
-
-            />
-
-    </LinearLayout>
 
 
 

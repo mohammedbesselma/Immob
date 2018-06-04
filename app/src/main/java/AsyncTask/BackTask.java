@@ -697,7 +697,7 @@ public class BackTask extends AsyncTask<String,Void,String>  {
 
                     String id= JO.getString("ID_immob");
 
-                        new Photos().Inserer(Ajouterimmob.selectionResult,ctx,id);
+                        new Photos().Inserer(Ajouterimmob.selectionResult,ctx,id,String.valueOf(HomeActivity.utilisateur.getID_Utilisateur()));
 
 
 
