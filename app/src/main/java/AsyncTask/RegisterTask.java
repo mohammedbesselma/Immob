@@ -166,7 +166,7 @@ public class RegisterTask extends AsyncTask<String,Void,String> {
 
 
         Toast.makeText(ctx,result, Toast.LENGTH_LONG).show();
-
+        Toast.makeText(ctx,result, Toast.LENGTH_LONG).show();
 
 
 
