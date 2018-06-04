@@ -31,10 +31,10 @@ import Adapter.CustomListViewAdapter;
 import AppClasse.Utilisateur;
 
 /**
- * Created by Mohammed on 25/05/2018.
+ * Created by Mohammed on 04/06/2018.
  */
 
-public class LoginRegisterTask extends AsyncTask<String,Void,String> {
+public class RegisterTask extends AsyncTask<String,Void,String> {
 
     JSONObject jsonObject;
     JSONArray jsonArray;
@@ -45,7 +45,7 @@ public class LoginRegisterTask extends AsyncTask<String,Void,String> {
     Context ctx;
 
 
-    public LoginRegisterTask(Context ctx) {
+    public RegisterTask(Context ctx) {
 
         this.ctx=ctx;
 
@@ -164,38 +164,10 @@ public class LoginRegisterTask extends AsyncTask<String,Void,String> {
     @Override
     protected void onPostExecute(String result) {
 
-        if(method.equals("login")){
+
+        Toast.makeText(ctx,result, Toast.LENGTH_LONG).show();
 
 
-            try {
-                jsonObject=new JSONObject(result);
-
-                jsonArray=jsonObject.getJSONArray("server_response");
-                JSONObject JO= jsonArray.getJSONObject(0);
-                Utilisateur utilisateur= new Utilisateur();
-                utilisateur.setID_Utilisateur(JO.getInt("ID_Utilisateur"));
-                utilisateur.setNom_Utilisateur(JO.getString("Nom"));
-                utilisateur.setPrenom_Utilisateur(JO.getString("Prenom"));
-                utilisateur.setEmail_Utilisateur(JO.getString("Email"));
-                if (!utilisateur.getEmail_Utilisateur().equals(null)){
-
-                    Intent myintent = new Intent(ctx,HomeActivity.class);
-                    myintent.putExtra("Utilisateur", utilisateur);
-                    ctx.startActivity(myintent);
-                }
-
-
-
-
-
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-
-            LoginActivity.progressBar.setVisibility(View.GONE);
-            LoginActivity.messagelogin.setText(result);
-
-        }
 
 
 

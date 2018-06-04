@@ -6,6 +6,7 @@ import java.io.Serializable;
 
 import AsyncTask.BackTask;
 import AsyncTask.LoginRegisterTask;
+import AsyncTask.RegisterTask;
 
 /**
  * Created by Mohammed on 09/05/2018.
@@ -30,7 +31,7 @@ public class Utilisateur implements Serializable {
     public  void Inscrir(String nom,String prenom,String email,String motdepasse,Context ctx){
 
 
-        new LoginRegisterTask(ctx).execute("register",nom,prenom,email,motdepasse);
+        new RegisterTask(ctx).execute("register",nom,prenom,email,motdepasse);
 
     }
 
