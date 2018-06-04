@@ -70,6 +70,17 @@ public class BackTask extends AsyncTask<String,Void,String>  {
          method = params[0];
 
         String response="";
+        if (method.equals("edit")){
+            String idimmob=params[1];
+            String Type=params[2];
+            String Ville=params[3];
+            String Etat=params[4];
+            String Prix=params[5];
+            String Discription=params[6];
+
+
+            response=edit(idimmob,Type,Ville,Etat,Prix,Discription);
+        }
         if (method.equals("deletefavoris")){
             String idimmob=params[1];
             String idutilisateur=params[2];
@@ -198,7 +209,6 @@ public class BackTask extends AsyncTask<String,Void,String>  {
         return response;
 
     }
-
 
 
 
@@ -1512,6 +1522,52 @@ public class BackTask extends AsyncTask<String,Void,String>  {
             BufferedWriter bufferedWriter=new BufferedWriter(new OutputStreamWriter(OS,"UTF-8"));
             String data=URLEncoder.encode("idimmob","UTF-8")+"="+URLEncoder.encode(idimmob,"UTF-8")+"&"+
                     URLEncoder.encode("idutilisateur","UTF-8")+"="+URLEncoder.encode(idutilisateur,"UTF-8");
+            bufferedWriter.write(data);;
+            bufferedWriter.write(data);
+            bufferedWriter.flush();
+            bufferedWriter.close();
+            OS.close();
+            InputStream inputStream= httpURLConnection.getInputStream();
+            BufferedReader bufferedReader= new BufferedReader(new InputStreamReader(inputStream));
+            StringBuilder stringBuilder= new StringBuilder();
+
+            while ((response=bufferedReader.readLine())!=null){
+
+                stringBuilder.append(response+"\n");
+
+            }
+            bufferedReader.close();
+            inputStream.close();
+            httpURLConnection.disconnect();
+            return stringBuilder.toString().trim();
+
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        return response;
+    }
+
+    public String edit(String idimmob,String Type,String Ville,String Etat,String Prix,String Discription) {
+        String response="";
+        String reg_url = Constans.getIPadress()+"/edit.php";
+
+        try {
+            URL url= new URL(reg_url);
+            HttpURLConnection httpURLConnection =(HttpURLConnection) url.openConnection();
+            httpURLConnection.setRequestMethod("POST");
+            httpURLConnection.setDoOutput(true);
+            OutputStream OS=httpURLConnection.getOutputStream();
+            BufferedWriter bufferedWriter=new BufferedWriter(new OutputStreamWriter(OS,"UTF-8"));
+            String data=URLEncoder.encode("type","UTF-8")+"="+URLEncoder.encode(Type,"UTF-8")+"&"+
+                    URLEncoder.encode("ville","UTF-8")+"="+URLEncoder.encode(Ville,"UTF-8")+"&"+
+                    URLEncoder.encode("etat","UTF-8")+"="+URLEncoder.encode(Etat,"UTF-8")+"&"+
+                    URLEncoder.encode("prix","UTF-8")+"="+URLEncoder.encode(Prix,"UTF-8")+"&"+
+                    URLEncoder.encode("discription","UTF-8")+"="+URLEncoder.encode(Discription,"UTF-8")+"&"+
+                    URLEncoder.encode("idimmob","UTF-8")+"="+URLEncoder.encode(idimmob,"UTF-8");
             bufferedWriter.write(data);;
             bufferedWriter.write(data);
             bufferedWriter.flush();
