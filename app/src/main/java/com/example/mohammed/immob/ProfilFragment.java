@@ -42,7 +42,8 @@ public class ProfilFragment extends Fragment {
         conecter1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                
+                Intent myintent = new Intent(getActivity(),LoginActivity.class);
+                getActivity().startActivity(myintent);
             }
         });
         tomes.setOnClickListener(new View.OnClickListener() {
