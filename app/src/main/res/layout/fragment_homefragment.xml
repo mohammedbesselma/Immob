@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Homefragment"
+
+    >
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+
+            android:orientation="horizontal"
+            android:padding="10dp"
+            >
+
+
+            <Button
+                android:id="@+id/rechercher"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/search"
+                android:gravity="center"
+                android:paddingTop="5dp"
+                android:textColor="#fff"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right">
+
+                <Button
+                    android:id="@+id/ajouter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:background="@drawable/bouton3"
+                    android:drawableTop="@drawable/ic_add_black_24dp"
+                    android:gravity="center"
+                    android:paddingTop="5dp"
+                    android:textColor="#fff"
+                    />
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/immoblist"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@color/pink"
+            android:dividerHeight="4px"
+
+            >
+
+
+        </ListView>
+
+    </LinearLayout>
+
+
+
+</FrameLayout>

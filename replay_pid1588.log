@@ -1,0 +1,15 @@
+JvmtiExport can_access_local_variables 0
+JvmtiExport can_hotswap_or_post_breakpoint 0
+JvmtiExport can_post_on_exceptions 0
+# 118 ciObject found
+ciMethod org/gradle/internal/component/external/model/MutableMavenModuleResolveMetadata getSnapshotTimestamp ()Ljava/lang/String; 0 0 1 0 -1
+ciMethod org/gradle/internal/component/external/model/MutableMavenModuleResolveMetadata getPackaging ()Ljava/lang/String; 0 0 1 0 -1
+ciMethod org/gradle/internal/component/external/model/MutableMavenModuleResolveMetadata isRelocated ()Z 0 0 1 0 -1
+ciMethod org/gradle/internal/component/external/model/MutableMavenModuleResolveMetadata getVariants ()Lcom/google/common/collect/ImmutableList; 0 0 1 0 -1
+ciMethod org/gradle/internal/component/external/model/DefaultMutableMavenModuleResolveMetadata getSnapshotTimestamp ()Ljava/lang/String; 1025 1 128 0 -1
+ciMethod org/gradle/internal/component/external/model/DefaultMutableMavenModuleResolveMetadata isRelocated ()Z 1025 1 128 0 -1
+ciMethod org/gradle/internal/component/external/model/DefaultMutableMavenModuleResolveMetadata getPackaging ()Ljava/lang/String; 1025 1 128 0 -1
+ciMethod org/gradle/internal/component/external/model/DefaultMutableMavenModuleResolveMetadata getVariants ()Lcom/google/common/collect/ImmutableList; 3073 1 1028 0 -1
+ciMethod org/gradle/internal/component/external/model/DefaultMavenModuleResolveMetadata <init> (Lorg/gradle/internal/component/external/model/MutableMavenModuleResolveMetadata;)V 4097 1 514 0 -1
+ciMethod org/gradle/internal/component/external/model/AbstractModuleComponentResolveMetadata <init> (Lorg/gradle/internal/component/external/model/MutableModuleComponentResolveMetadata;)V 4097 1 514 0 -1
+ciMethodData org/gradle/internal/component/external/model/DefaultMutableMavenModuleResolveMetadata getVariants ()Lcom/google/common/collect/ImmutableList; 0 0 orig 264 56 173 82 105 0 0 0 0 88 66 73 29 0 0 0 0 48 4 0 0 240 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 77 68 79 32 101 120 116 114 97 32 100 97 116 97 32 108 111 99 107 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 128 1 0 0 33 20 0 0 1 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 1 0 19 0 2 0 0 0 232 2 0 0 255 255 255 255 7 0 4 0 0 0 0 0 data 93 0x40007 0x0 0x50 0x284 0xb0007 0x0 0x30 0x284 0xe0002 0x284 0x160007 0x0 0x40 0x0 0x1d0007 0x0 0x20 0x0 0x290002 0x0 0x310007 0x0 0x50 0x0 0x390005 0x0 0x0 0x0 0x0 0x0 0x410005 0x0 0x0 0x0 0x0 0x0 0x480005 0x0 0x0 0x0 0x0 0x0 0x4d0007 0x0 0x168 0x0 0x510005 0x0 0x0 0x0 0x0 0x0 0x560004 0x0 0x0 0x0 0x20000000 0x0 0x600005 0x0 0x0 0x0 0x0 0x0 0x640002 0x0 0x680002 0x0 0x6c0002 0x0 0x6f0002 0x0 0x730002 0x0 0x760002 0x0 0x790002 0x0 0x7c0005 0x0 0x0 0x0 0x0 0x0 0x800003 0x0 0xfffffffffffffe80 0x840005 0x0 0x0 0x0 0x0 0x0 oops 1

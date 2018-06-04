@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="spinnerItems">
+        <item>Type</item>
+        <item>Villa</item>
+        <item>Apartement</item>
+        <item>Studio</item>
+
+    </string-array>
+
+    <string-array name="spinner2Items">
+        <item>Ville</item>
+        <item>Chlef</item>
+        <item>Alger</item>
+        <item>Tizi</item>
+
+    </string-array>
+</resources>

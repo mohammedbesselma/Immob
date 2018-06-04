@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="5dp"
+    android:id="@+id/gravitilayout"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/mymessagelayout"
+        android:gravity="left">
+        <android.support.v7.widget.CardView
+
+            android:id="@+id/mymessagecardview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            app:cardCornerRadius="20dp"
+            app:cardBackgroundColor="@color/pink2"
+            android:elevation="20dp"
+            android:layout_marginRight="80dp"
+            >
+            <LinearLayout
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:gravity="left"
+
+                >
+                <TextView
+                    android:id="@+id/mymessagetext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="allo win rak rani nestna fi"
+                    android:textSize="24dp"
+                    android:textColor="#fff"/>
+            </LinearLayout>
+
+
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/yourmessagelayout"
+        android:gravity="right">
+        <android.support.v7.widget.CardView
+
+            android:id="@+id/yourmessagecardview"
+            android:layout_marginLeft="80dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            app:cardCornerRadius="20dp"
+            app:cardBackgroundColor="@color/gris"
+            android:elevation="20dp"
+            >
+            <LinearLayout
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:gravity="left"
+
+                >
+                <TextView
+                    android:id="@+id/yourmessagetext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="allo win rak rani nestna fi"
+                    android:textSize="24dp"
+                    android:textColor="@color/pink2"/>
+            </LinearLayout>
+
+
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+
+</LinearLayout>

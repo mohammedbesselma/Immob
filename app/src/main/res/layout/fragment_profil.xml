@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfilFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@color/pink">
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="10dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="1300dp"
+                android:layout_height="130dp"
+                android:src="@drawable/profil"/>
+            <TextView
+                android:id="@+id/profilnomprenom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="WISSAM WISSAM"
+                android:textSize="16dp"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="10dp"/>
+            <TextView
+                android:id="@+id/profilemail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="wissam@gmail.com"
+                android:layout_marginTop="5dp"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/pink"
+            android:layout_marginTop="10dp"></LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/tomesannonce"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                android:text="Mes annonce"
+                android:drawableLeft="@drawable/ic_location_city_black2_24dp"
+                android:textSize="14dp"
+
+                android:paddingLeft="80dp"
+                android:paddingRight="120dp"
+                />
+            <Button
+                android:id="@+id/tomesfavoris"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                android:text="Mes favoris"
+                android:drawableLeft="@drawable/ic_favorite_black_24dp"
+                android:textSize="14dp"
+
+                android:paddingLeft="80dp"
+                android:paddingRight="120dp"
+                />
+
+        </LinearLayout>
+
+
+
+
+
+    </LinearLayout>
+
+</FrameLayout>

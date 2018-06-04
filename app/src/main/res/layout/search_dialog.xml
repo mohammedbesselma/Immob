@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="300dp"
+    android:layout_height="400dp">
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/recherche"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="50dp"
+            android:text="Rechercher"
+            android:textAlignment="center"
+            android:textSize="26dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+
+            />
+        <EditText
+            android:id="@+id/name"
+            android:layout_below="@+id/recherche"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Type"
+            android:layout_margin="20dp"
+            />
+        <EditText
+            android:id="@+id/ville"
+            android:layout_below="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ville"
+            android:layout_margin="20dp"
+            />
+        <EditText
+            android:id="@+id/date"
+            android:layout_below="@+id/ville"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="aaaa-mm-dd"
+            android:layout_margin="20dp"
+            android:inputType="date"
+            />
+
+        <RelativeLayout
+            android:layout_width="220dp"
+            android:layout_height="67dp"
+            android:layout_below="@+id/date"
+            android:layout_centerHorizontal="true">
+
+            <Button
+                android:id="@+id/cancel"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/power"
+                android:gravity="center" />
+
+            <Button
+                android:id="@+id/ok"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="50dp"
+                android:background="@drawable/check"
+
+                android:gravity="center" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

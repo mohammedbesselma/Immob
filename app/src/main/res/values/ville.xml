@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="villeItems">
+        <item>Ville</item>
+        <item>01 ADRAR</item>
+        <item>02 CHLEF</item>
+        <item>03 ELAGHOUAT</item>
+        <item>16 ALGER</item>
+
+    </string-array>
+
+</resources>

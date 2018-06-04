@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Ajouterimmob"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/gris"
+        android:paddingTop="10dp"
+        android:paddingLeft="20dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:textSize="27dp"
+            android:textStyle="bold"
+            android:textColor="@color/pink2"
+            android:text="Accueil"
+            android:drawableLeft="@drawable/ic_arrow_back_black_24dp"
+
+            />
+
+    </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            >
+            <android.support.v7.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="30dp"
+                android:layout_margin="10dp"
+                app:cardBackgroundColor="@color/gris"
+                app:cardCornerRadius="25dp"
+
+                >
+            <Spinner
+                android:id="@+id/immobtype"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:entries="@array/spinnerItems"
+                android:spinnerMode="dialog"
+                />
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="30dp"
+                android:layout_margin="10dp"
+                app:cardBackgroundColor="@color/gris"
+                app:cardCornerRadius="25dp">
+            <Spinner
+                android:id="@+id/immobville"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:entries="@array/spinner2Items"
+                android:spinnerMode="dialog"/>
+
+            </android.support.v7.widget.CardView>
+
+
+
+
+
+        </LinearLayout>
+    <RatingBar
+        android:id="@+id/immobetat"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+
+        android:isIndicator="false"
+        android:numStars="5" />
+
+    <android.support.v7.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="30dp"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="@color/gris"
+        app:cardCornerRadius="25dp">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+
+
+
+
+
+
+
+
+
+            <EditText
+                android:id="@+id/immobprix"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+
+                android:hint="Prix/Nuit"
+
+
+                />
+
+
+            <EditText
+
+                android:id="@+id/immobdiscription"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_marginTop="20dp"
+                android:ems="10"
+                android:hint="Discription"
+                android:inputType="textMultiLine" />
+
+
+
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+
+        >
+
+        <Button
+            android:id="@+id/immobimagechoix"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/bouton1"
+            android:drawableTop="@drawable/ic_image_black_24dp"
+            android:padding="10dp"
+            android:text="Ajouter images"
+
+            android:textColor="#fff" />
+
+        <Button
+            android:id="@+id/immobenregistrer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bouton2"
+            android:drawableTop="@drawable/ic_send_black_24dp"
+            android:padding="10dp"
+            android:paddingTop="10dp"
+            android:text="Enregistrer"
+            android:textColor="#fff"
+
+            />
+
+    </LinearLayout>
+
+
+
+
+    <GridView
+        android:id="@+id/mygridview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:gravity="center_horizontal"
+        android:horizontalSpacing="0dp"
+        android:numColumns="2"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="0dp" />
+
+
+</LinearLayout>

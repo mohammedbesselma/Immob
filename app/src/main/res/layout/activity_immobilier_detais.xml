@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ImmobilierDetais"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/pink"
+            android:paddingLeft="20dp"
+            android:gravity="center_vertical"
+            android:paddingBottom="2dp"
+
+
+            >
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+
+                android:id="@+id/photoproprietaire"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/profil"
+                />
+
+            <LinearLayout
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="20dp"
+                android:background="@color/gris"
+                android:gravity="center"
+                >
+
+                <TextView
+                    android:id="@+id/nomproprietaire"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="24dp"
+                    android:text="nom prenom"
+
+                    />
+                <TextView
+                    android:id="@+id/contactproprietaire"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="email@email.com"
+                    android:textSize="20dp"
+                    />
+                <TextView
+                    android:id="@+id/heuretdate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:textColor="@color/pink2"
+                    android:text="18/05/2018 a 13:17"
+                    />
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/pink"
+            >
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp">
+                <ImageView
+                    android:id="@+id/sendmessageto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_email_black_24dp"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal">
+                <Button
+                    android:id="@+id/ajouteraufavoris"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:drawableRight="@drawable/ic_favorite_black_24dp"
+
+
+                    />
+                <Button
+                    android:id="@+id/reserverimmob"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="reserver"
+
+                    />
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+    <ScrollView
+        style="@android:style/Widget.Holo.ScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:fillViewport="false"
+        android:scrollbarStyle="insideOverlay">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <com.github.paolorotolo.expandableheightlistview.ExpandableHeightGridView
+                android:id="@+id/reservationgridview"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:padding="8dp"
+                android:numColumns="3"
+                android:horizontalSpacing="2dp"
+
+                >
+            </com.github.paolorotolo.expandableheightlistview.ExpandableHeightGridView>
+
+
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="10dp"
+                app:cardBackgroundColor="@color/gris"
+                app:cardCornerRadius="25dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+
+                    <TextView
+                        android:id="@+id/detaistype"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Villa"
+                        android:textSize="24dp" />
+
+                    <TextView
+                        android:id="@+id/detaisville"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Chlef"
+                        android:textSize="24dp" />
+
+                    <RatingBar
+                        android:id="@+id/detaisrating12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="false"
+                        android:contextClickable="false"
+                        android:isIndicator="false"
+                        android:numStars="5" />
+
+                    <TextView
+                        android:id="@+id/detaisprix1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="prix"
+                        android:textColor="@color/colorAccent" />
+
+                    <TextView
+                        android:id="@+id/detaisdisc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="villa chaba jaya mgabla lbhar li intérisé yji lel privé "
+                        android:textSize="24dp" />
+
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/imageviewpager"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:layout_marginTop="10dp"
+                    >
+
+
+                </android.support.v4.view.ViewPager>
+
+
+            </LinearLayout>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:padding="10dp"
+                app:cardBackgroundColor="@color/pink"
+                android:layout_marginTop="10dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#fff"
+
+                    android:gravity="center"
+                    >
+
+
+                    <Button
+                        android:id="@+id/buttoncomment"
+                        android:layout_width="60dp"
+                        android:layout_height="40dp"
+                        android:background="@color/pink2"
+                        android:textColor="#fff"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:paddingLeft="15dp"
+                        android:drawableLeft="@drawable/ic_near_me_black_24dp"
+
+                        />
+                    <EditText
+                        android:backgroundTint="@color/pink"
+                        android:id="@+id/commentcontenue"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="#fff"
+                        android:hint="Ecrir un commentaire"
+                        android:layout_marginLeft="10dp"/>
+
+
+                </LinearLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+
+            <com.github.paolorotolo.expandableheightlistview.ExpandableHeightListView
+                android:id="@+id/commentlistview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+
+
+            </com.github.paolorotolo.expandableheightlistview.ExpandableHeightListView>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</LinearLayout>
