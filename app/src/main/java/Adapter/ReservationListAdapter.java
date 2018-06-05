@@ -9,9 +9,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.mohammed.immob.HomeActivity;
 import com.example.mohammed.immob.R;
+import com.example.mohammed.immob.Reservation;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -79,6 +81,34 @@ public class ReservationListAdapter  extends BaseAdapter {
 
         nomprenom.setText(reservation.get("nom")+" "+reservation.get("prenom"));
         date.setText(reservation.get("date"));
+
+        if (reservation.get("validation").equals("valide")){
+            confirmer.setVisibility(View.GONE);
+        }
+        if (reservation.get("validation").equals("annule")){
+            annuler.setVisibility(View.GONE);
+        }
+
+
+        confirmer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Toast.makeText(mContext,reservationlist.get(position).get("validation"),Toast.LENGTH_LONG).show();
+                new BackTask(mContext).execute("validation",reservationlist.get(position).get("id_reservation"),"valide");
+                new BackTask(mContext).execute("reservation", Reservation.idimmob);
+            }
+        });
+        annuler.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Toast.makeText(mContext,reservationlist.get(position).get("validation"),Toast.LENGTH_LONG).show();
+                new BackTask(mContext).execute("validation",reservationlist.get(position).get("id_reservation"),"annule");
+                new BackTask(mContext).execute("reservation", Reservation.idimmob);
+
+            }
+        });
 
 
 

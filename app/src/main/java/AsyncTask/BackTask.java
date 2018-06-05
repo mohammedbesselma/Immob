@@ -15,6 +15,7 @@ import com.example.mohammed.immob.ImmobilierDetais;
 import com.example.mohammed.immob.LoginActivity;
 import com.example.mohammed.immob.MesannonceActivity;
 import com.example.mohammed.immob.MessageFragment;
+import com.example.mohammed.immob.Reservation;
 
 import Adapter.CommentlistAdapter;
 import Adapter.Constans;
@@ -23,6 +24,7 @@ import Adapter.FavorisAdapter;
 import Adapter.MesannonceAdapter;
 import Adapter.MessageAdapter;
 import Adapter.ReservationAdapter;
+import Adapter.ReservationListAdapter;
 import Adapter.SliderAdapter;
 import AppClasse.Photos;
 
@@ -70,7 +72,18 @@ public class BackTask extends AsyncTask<String,Void,String>  {
          method = params[0];
 
         String response="";
-        if (method.equals("edit")){
+        if (method.equals("validation")){
+            String idreservation=params[1];
+            String valider=params[2];
+
+            response=setvalidation(idreservation,valider);
+        }
+        if (method.equals("reservation")){
+            String idimmob=params[1];
+
+            response=reservation(idimmob);
+
+        }else if (method.equals("edit")){
             String idimmob=params[1];
             String Type=params[2];
             String Ville=params[3];
@@ -212,6 +225,7 @@ public class BackTask extends AsyncTask<String,Void,String>  {
 
 
 
+
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
@@ -219,6 +233,46 @@ public class BackTask extends AsyncTask<String,Void,String>  {
 
     @Override
     protected void onPostExecute(String result) {
+
+        if (method.equals("reservation")){
+            Toast.makeText(ctx,result, Toast.LENGTH_LONG).show();
+            try {
+                ArrayList<HashMap<String, String>> Immobilierlist = new ArrayList<>();
+
+                jsonObject=new JSONObject(result);
+
+                jsonArray=jsonObject.getJSONArray("server_response");
+                int count=0;
+                while (count<jsonArray.length()){
+
+
+                    JSONObject JO= jsonArray.getJSONObject(count);
+                    HashMap<String, String> data = new HashMap<>();
+                    data.put("id_reservation", JO.getString("id_reservation"));
+                    data.put("date", JO.getString("date"));
+                    data.put("validation", JO.getString("validation"));
+                    data.put("ID_Utilisateur", JO.getString("ID_Utilisateur"));
+                    data.put("nom", JO.getString("Nom"));
+                    data.put("prenom", JO.getString("Prenom"));
+
+
+
+
+                    Immobilierlist.add(data);
+                    count++;
+
+
+                }
+
+                ReservationListAdapter reservationListAdapter = new ReservationListAdapter(ctx, Immobilierlist);
+                Reservation.reservationlist.setAdapter(reservationListAdapter);
+
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+        }
         if (method.equals("deletefavoris")){
             Toast.makeText(ctx,result, Toast.LENGTH_LONG).show();
 
@@ -1598,5 +1652,85 @@ public class BackTask extends AsyncTask<String,Void,String>  {
     }
 
 
+    public String reservation(String idimmob) {
+        String response="";
+        String reg_url = Constans.getIPadress()+"/reservation.php";
 
+        try {
+            URL url= new URL(reg_url);
+            HttpURLConnection httpURLConnection =(HttpURLConnection) url.openConnection();
+            httpURLConnection.setRequestMethod("POST");
+            httpURLConnection.setDoOutput(true);
+            OutputStream OS=httpURLConnection.getOutputStream();
+            BufferedWriter bufferedWriter=new BufferedWriter(new OutputStreamWriter(OS,"UTF-8"));
+            String data=URLEncoder.encode("idimmob","UTF-8")+"="+URLEncoder.encode(idimmob,"UTF-8");
+            bufferedWriter.write(data);;
+            bufferedWriter.write(data);
+            bufferedWriter.flush();
+            bufferedWriter.close();
+            OS.close();
+            InputStream inputStream= httpURLConnection.getInputStream();
+            BufferedReader bufferedReader= new BufferedReader(new InputStreamReader(inputStream));
+            StringBuilder stringBuilder= new StringBuilder();
+
+            while ((response=bufferedReader.readLine())!=null){
+
+                stringBuilder.append(response+"\n");
+
+            }
+            bufferedReader.close();
+            inputStream.close();
+            httpURLConnection.disconnect();
+            return stringBuilder.toString().trim();
+
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        return response;
+    }
+    public String setvalidation(String idreservation,String valider) {
+        String response="";
+        String reg_url = Constans.getIPadress()+"/validation.php";
+
+        try {
+            URL url= new URL(reg_url);
+            HttpURLConnection httpURLConnection =(HttpURLConnection) url.openConnection();
+            httpURLConnection.setRequestMethod("POST");
+            httpURLConnection.setDoOutput(true);
+            OutputStream OS=httpURLConnection.getOutputStream();
+            BufferedWriter bufferedWriter=new BufferedWriter(new OutputStreamWriter(OS,"UTF-8"));
+            String data=URLEncoder.encode("idreservation","UTF-8")+"="+URLEncoder.encode(idreservation,"UTF-8")+"&"+
+                    URLEncoder.encode("validation","UTF-8")+"="+URLEncoder.encode(valider,"UTF-8");
+            bufferedWriter.write(data);;
+            bufferedWriter.write(data);
+            bufferedWriter.flush();
+            bufferedWriter.close();
+            OS.close();
+            InputStream inputStream= httpURLConnection.getInputStream();
+            BufferedReader bufferedReader= new BufferedReader(new InputStreamReader(inputStream));
+            StringBuilder stringBuilder= new StringBuilder();
+
+            while ((response=bufferedReader.readLine())!=null){
+
+                stringBuilder.append(response+"\n");
+
+            }
+            bufferedReader.close();
+            inputStream.close();
+            httpURLConnection.disconnect();
+            return stringBuilder.toString().trim();
+
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        return response;
+    }
 }

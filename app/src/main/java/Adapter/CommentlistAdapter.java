@@ -56,7 +56,7 @@ public class CommentlistAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
 
         View view = convertView;
 
@@ -90,7 +90,7 @@ public class CommentlistAdapter extends BaseAdapter {
             public void onClick(View v) {
                 commentid = commentlist.get(position1);
 
-                new BackTask(context).execute("deletecomment",commentid.get("idcomment"));
+                new BackTask(context).execute("deletecomment",commentlist.get(position).get("idcomment"));
                 new BackTask(context).execute("getcommentlist", ImmobilierDetais.immob.get("idimmob"));
 
 

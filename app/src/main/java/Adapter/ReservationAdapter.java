@@ -55,7 +55,7 @@ public class ReservationAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
 
         View view = convertView;
 
@@ -75,26 +75,23 @@ public class ReservationAdapter extends BaseAdapter {
         textView.setText(immob.get("date"));
 
 
-        if(immob.get("validation").equals("0")){
 
-            etat.setText("En attente ...");
 
-        }else if (immob.get("validation").equals("1")){
+            etat.setText(immob.get("validation"));
 
-            etat.setText("Validée");
 
-        }else {
 
-            etat.setText("refusée");
-        }
+
+
+
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
 
-                new BackTask(mContext).execute("deletereservation",immob.get("idreservation"));
-                new BackTask(mContext).execute("getreservation",immob.get("idimmob"),String.valueOf(HomeActivity.utilisateur.getID_Utilisateur()));
+                new BackTask(mContext).execute("deletereservation",reservationlist.get(position).get("idreservation"));
+                new BackTask(mContext).execute("getreservation",reservationlist.get(position).get("idimmob"),String.valueOf(HomeActivity.utilisateur.getID_Utilisateur()));
 
             }
         });

@@ -21,7 +21,13 @@
             android:textSize="16dp"
             android:text="wissam wissam"
             android:textColor="@android:color/black"/>
+        <TextView
 
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:text="souhait reserver votre immobilier le :"
+            />
         <TextView
             android:id="@+id/datereservation"
             android:layout_width="wrap_content"
@@ -41,19 +47,20 @@
 
         <Button
             android:id="@+id/confirmer"
-            android:layout_width="60dp"
+            android:layout_width="80dp"
             android:layout_height="30dp"
             android:text="CONFIRMER"
             android:textColor="#fff"
-            android:textSize="6dp"
+            android:textSize="12dp"
             android:background="#43A047"/>
         <Button
+            android:layout_marginTop="2dp"
             android:id="@+id/annuler"
-            android:layout_width="60dp"
+            android:layout_width="80dp"
             android:layout_height="30dp"
             android:text="Annuler"
             android:textColor="#fff"
-            android:textSize="6dp"
+            android:textSize="12dp"
             android:background="#D32F2F"/>
     </LinearLayout>
 

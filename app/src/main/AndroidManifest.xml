@@ -32,7 +32,8 @@
         <activity android:name=".Test" />
         <activity android:name=".Discussion" />
         <activity android:name=".MesannonceActivity" />
-        <activity android:name=".Favoris"></activity>
+        <activity android:name=".Favoris" />
+        <activity android:name=".Reservation"></activity>
     </application>
 
 </manifest>

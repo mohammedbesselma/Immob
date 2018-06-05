@@ -31,7 +31,7 @@ import AsyncTask.BackTask;
 public class MesannonceAdapter extends BaseAdapter {
 
     Context context;
-    ArrayList<HashMap<String,String>> mesannoncelist;
+    public  static  ArrayList<HashMap<String,String>> mesannoncelist;
 
     int position1;
 
