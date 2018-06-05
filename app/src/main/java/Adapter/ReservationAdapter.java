@@ -1,6 +1,7 @@
 package Adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -74,10 +75,15 @@ public class ReservationAdapter extends BaseAdapter {
 
         textView.setText(immob.get("date"));
 
+        etat.setText(immob.get("validation"));
+        if (immob.get("validation").equals("valide")){
+           etat.setTextColor(Color.parseColor("#43A047"));
+        }
+        if (immob.get("validation").equals("annule")){
+            etat.setTextColor(Color.parseColor("#D32F2F"));
+        }
 
 
-
-            etat.setText(immob.get("validation"));
 
 
 
